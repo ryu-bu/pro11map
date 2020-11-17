@@ -16,14 +16,13 @@
         <a class="nav-link" href="#">Quick Stats</a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          All City Council Profiles
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">All City Council Profiles</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="https://www.google.com/">Action</a>
+          <a class="dropdown-item" href="https://www.google.com/">Another action</a>
           <a class="dropdown-item" href="#">Something else here</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Separated link</a>
         </div>
       </li>
       <li class="nav-item">
