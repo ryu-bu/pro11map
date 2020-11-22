@@ -1,6 +1,7 @@
 import Vue from "vue";
 import App from "./App";
 import * as VueGoogleMaps from "vue2-google-maps";
+import router from './index'
 
 Vue.use(VueGoogleMaps, {
   load: {
@@ -11,6 +12,7 @@ Vue.use(VueGoogleMaps, {
 
 new Vue({
   el: "#app",
+  router,
   components: { App },
   render(h) {
   return h('App')

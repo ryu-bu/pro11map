@@ -13,16 +13,24 @@
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Quick Stats</a>
+        <a class="nav-link" href="\Quick_stats">Quick Stats</a> 
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">All City Council Profiles</a>
         <div class="dropdown-menu">
-          <a class="dropdown-item" href="https://www.google.com/">Action</a>
-          <a class="dropdown-item" href="https://www.google.com/">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Separated link</a>
+          <a class="dropdown-item" href="https://www.boston.gov/departments/city-council/kim-janey">Kim Janey</a>
+          <a class="dropdown-item" href="https://www.boston.gov/departments/city-council/annissa-essaibi-george">Annissa Essaibi George</a>
+          <a class="dropdown-item" href="https://www.boston.gov/departments/city-council/michael-flaherty">Michael Flaherty</a>
+          <a class="dropdown-item" href="https://www.boston.gov/departments/city-council/julia-mejia">Julia Mejia</a>
+          <a class="dropdown-item" href="https://www.boston.gov/departments/city-council/michelle-wu">Michelle Wu</a>
+          <a class="dropdown-item" href="https://www.boston.gov/departments/city-council/lydia-edwards">Lydia Edwards</a>
+          <a class="dropdown-item" href="https://www.boston.gov/departments/city-council/ed-flynn">Ed Flynn</a>
+          <a class="dropdown-item" href="https://www.boston.gov/departments/city-council/frank-baker">Frank Baker</a>
+          <a class="dropdown-item" href="https://www.boston.gov/departments/city-council/andrea-campbell">Andrea Campbell</a>
+          <a class="dropdown-item" href="https://www.boston.gov/departments/city-council/ricardo-arroyo">Ricardo Arroyo</a>
+          <a class="dropdown-item" href="https://www.boston.gov/departments/city-council/matt-omalley">Matt O'Malley</a>
+          <a class="dropdown-item" href="https://www.boston.gov/departments/city-council/kenzie-bok">Kenzie Bok</a>
+          <a class="dropdown-item" href="https://www.boston.gov/departments/city-council/liz-breadon">Liz Breadon</a>
         </div>
       </li>
       <li class="nav-item">
@@ -37,17 +45,20 @@
     </ul>
   </div>
 </nav>
-    <google-map style="height:100%; width:100%;"/>
+    <!-- <google-map style="height:100%; width:100%;"/> -->
+    <QuickStats />
   </div>
 </template>
 
 <script>
-import GoogleMap from "./components/GoogleMap";
+import QuickStats from "./components/Quick_stats";
 
 export default {
   name: "App",
   components: {
-    GoogleMap
+    QuickStats
   }
 };
+
+
 </script>

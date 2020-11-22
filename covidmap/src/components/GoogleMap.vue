@@ -30,6 +30,7 @@
 
 <script>
 import axios from 'axios';
+// import Vue from "vue";
 
 export default {
   name: "GoogleMap",
@@ -403,6 +404,7 @@ export default {
             .then((res) => {
                 console.log(res.data);
                 const towns = res.data;
+                console.log(towns);
                 var dtrigger = false;
                 for (var i = 0; i < towns.length; i++){
                     if (towns[i].name !== "Dorchester"){
@@ -464,8 +466,26 @@ export default {
         <h3 class="display-4">${town.name}</h3>
       </div>
     </div>
+    <div class="content>
+      <span v-if="${town.zip} == 02128"><a href= "https://www.boston.gov/departments/city-council/lydia-edwards">Lydia Edwards</a> | 617-635-3200</span><br>
+      <span v-else-if="${town.zip} === 02126"><a href= "https://www.boston.gov/departments/city-council/andrea-campbell">Andrea Campbell</a> | 617-635-3131</span><br>
+      <span v-else-if="${town.zip} === 02122, 02124"><a href= "https://www.boston.gov/departments/city-council/frank-baker">Frank Baker</a> | 617-635-3455</span><br>
+      <span v-else-if="${town.zip} === 02121, 02125"><a href= "https://www.boston.gov/departments/city-council/andrea-campbell">Andrea Campbell</a> | 617-635-3131</span><br>
+      <span v-else-if="${town.zip} === 02136"><a href= "https://www.boston.gov/departments/city-council/ricardo-arroyo">Ricardo Arroyo</a> | 617-635-4210</span><br>
+      <span v-else-if="${town.zip} === 02131"><a href= "https://www.boston.gov/departments/city-council/ricardo-arroyo">Ricardo Arroyo</a> | 617-635-4210<br> <a href= "https://www.boston.gov/departments/city-council/andrea-campbell">Andrea Campbell</a>| 617-635-3131</span><br>
+      <span v-else-if="${town.zip} === 02119, 02120"><a href= "https://www.boston.gov/departments/city-council/kim-janey">Kim Janey</a> | 617-635-3510</span><br>
+      <span v-else-if="${town.zip} === 02132"><a href= "https://www.boston.gov/departments/city-council/matt-omalley">Matt O'Malley</a> | 617-635-4220</span><br>
+      <span v-else-if="${town.zip} === 02111, 02118"><a href= "https://www.boston.gov/departments/city-council/ed-flynn">Ed Flynn</a> | 617-635-3203</span><br>
+      <span v-else-if="${town.zip} === 02127, 02210"><a href= "https://www.boston.gov/departments/city-council/ed-flynn">Ed Flynn</a> | 617-635-3203</span><br>
+      <span v-else-if="${town.zip} === 02130"><a href= "https://www.boston.gov/departments/city-council/matt-omalley">Matt O'Malley</a> | 617-635-4220<br> <a href= "https://www.boston.gov/departments/city-council/andrea-campbell">Andrea Campbell</a>| 617-635-3131</span><br>
+      <span v-else-if="${town.zip} === 02129"><a href= "https://www.boston.gov/departments/city-council/lydia-edwards">Lydia Edwards</a> | 617-635-3200</span><br>
+      <span v-else-if="${town.zip} === 02163, 02134, 02135"><a href= "https://www.boston.gov/departments/city-council/liz-breadon">Liz Breadon</a> | 617-635-3113</span><br>
+      <span v-else-if="${town.zip} === 02108, 02114, 02116, 02199, 02222, 02109, 02110, 02113"><a href= "https://www.boston.gov/departments/city-council/kenzie-bok">Kenzie Bok</a> | 617-635-4225 <br> <a href= "https://www.boston.gov/departments/city-council/ed-flynn">Ed Flynn</a> | 617-635-3203 <br> <a href= "https://www.boston.gov/departments/city-council/lydia-edwards">Lydia Edwards</a> | 617-635-3200</span><br>
+      <span v-else-if="${town.zip} === 02115, 02215"><a href= "https://www.boston.gov/departments/city-council/kenzie-bok">Kenzie Bok</a> | 617-635-4225 </span><br>
+      <span v-else-if="${town.zip} === N/A"><a href= "https://www.boston.gov/departments/city-council/kim-janey">Kim Janey</a> | 617-635-3510</span><br>
+    </div>
     <div class="content">
-        ZIP Code: ${town.zip}
+        ZIP Code: ${town.zip}  02128
     </div>
     <div style="font-size:20px;">
         <strong>Total Cases:</strong> ${town.case} <br>
@@ -474,7 +494,7 @@ export default {
     </div>
   </div>
 </div>`);
-    }
+    },
   },
   
 };
