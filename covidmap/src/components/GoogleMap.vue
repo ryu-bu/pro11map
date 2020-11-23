@@ -467,7 +467,7 @@ export default {
       </div>
     </div>
     <div class="content>
-      <span v-if="${town.zip} == 02128"><a href= "https://www.boston.gov/departments/city-council/lydia-edwards">Lydia Edwards</a> | 617-635-3200</span><br>
+      <span v-if="${town.zip} === '02128'"><a href= "https://www.boston.gov/departments/city-council/lydia-edwards">Lydia Edwards</a> | 617-635-3200</span><br>
       <span v-else-if="${town.zip} === 02126"><a href= "https://www.boston.gov/departments/city-council/andrea-campbell">Andrea Campbell</a> | 617-635-3131</span><br>
       <span v-else-if="${town.zip} === 02122, 02124"><a href= "https://www.boston.gov/departments/city-council/frank-baker">Frank Baker</a> | 617-635-3455</span><br>
       <span v-else-if="${town.zip} === 02121, 02125"><a href= "https://www.boston.gov/departments/city-council/andrea-campbell">Andrea Campbell</a> | 617-635-3131</span><br>
