@@ -13,7 +13,7 @@
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="\Quick_stats">Quick Stats</a> 
+        <a class="nav-link" href="#">Quick Stats</a> 
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">All City Council Profiles</a>
@@ -51,11 +51,13 @@
 </template>
 
 <script>
+  //  import GoogleMap from "./components/GoogleMap";
 import QuickStats from "./components/Quick_stats";
 
 export default {
   name: "App",
   components: {
+    // GoogleMap
     QuickStats
   }
 };

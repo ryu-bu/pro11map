@@ -269,7 +269,7 @@ export default {
     "featureType": "poi.sports_complex",
     "stylers": [
       {
-        "visibility": "off"
+        "visibility": "on"
       }
     ]
   },
@@ -402,9 +402,7 @@ export default {
         return axios
             .get(this.api_endpoint)
             .then((res) => {
-                console.log(res.data);
                 const towns = res.data;
-                console.log(towns);
                 var dtrigger = false;
                 for (var i = 0; i < towns.length; i++){
                     if (towns[i].name !== "Dorchester"){
@@ -447,6 +445,8 @@ export default {
     },
     infoWindow(m, index){
         this.winPos = m.position;
+        console.log("test");
+        console.log(this.winPos);
         this.infoContent = this.getContent(m);
 
         if (this.currentWin == index){
