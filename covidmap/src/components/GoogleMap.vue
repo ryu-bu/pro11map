@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- declares the html of the map, markers and info window that appear-->
     <gmap-map
       :center="center"
       :zoom="12"
@@ -390,6 +391,7 @@ export default {
   },
 
   mounted() {
+      //calls getAPI() function on load
       this.getAPI();
   },
 
@@ -400,10 +402,14 @@ export default {
     },
     getAPI() {
         return axios
+            //obtains the api endpoint
             .get(this.api_endpoint)
             .then((res) => {
+                //towns variable set to data in endpoint
                 const towns = res.data;
                 var dtrigger = false;
+                //iterates through towns and pushes the data to the covid_case array
+                //dtrigger is to handle there being two dorchester districts on the map
                 for (var i = 0; i < towns.length; i++){
                     if (towns[i].name !== "Dorchester"){
                         this.covid_case.push({
@@ -447,6 +453,7 @@ export default {
         this.winPos = m.position;
         console.log("test");
         console.log(this.winPos);
+        //sets the infoContent var equal to the content returned by the .getContent func
         this.infoContent = this.getContent(m);
 
         if (this.currentWin == index){
@@ -458,7 +465,9 @@ export default {
         }
     },
     getContent(m){
+        //sets the town var equal to the data in the covid_case array for that town
         let town = this.covid_case.find((el) => el.name === m.name);
+        //finds the content of the infow window based off of the zip code
         let content;
         switch(town.zip){
           case "02128": 
@@ -510,6 +519,7 @@ export default {
             content = '<a href= "https://www.boston.gov/departments/city-council/kim-janey">Kim Janey</a> | 617-635-3510<br>';
             break;
         }
+        //returns the html of the info card with the data pulled from the table
         return (`
 <div>
   <div class="card-content">
