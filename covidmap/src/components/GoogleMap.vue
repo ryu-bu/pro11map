@@ -459,30 +459,67 @@ export default {
     },
     getContent(m){
         let town = this.covid_case.find((el) => el.name === m.name);
-        return (`<div>
+        let content;
+        switch(town.zip){
+          case "02128": 
+            content = '<a href= "https://www.boston.gov/departments/city-council/lydia-edwards">Lydia Edwards</a> | 617-635-3200<br>';
+            break;
+          case "02126":
+            content = '<a href= "https://www.boston.gov/departments/city-council/andrea-campbell">Andrea Campbell</a> | 617-635-3131<br>';
+            break;
+          case "02122, 02124":
+            content = '<a href= "https://www.boston.gov/departments/city-council/frank-baker">Frank Baker</a> | 617-635-3455<br>';
+            break;
+          case "02121, 02125":
+            content = '<a href= "https://www.boston.gov/departments/city-council/andrea-campbell">Andrea Campbell</a> | 617-635-3131<br>';
+            break;
+          case "02136":
+            content = '<a href= "https://www.boston.gov/departments/city-council/ricardo-arroyo">Ricardo Arroyo</a> | 617-635-4210<br>';
+            break;
+          case "02131":
+            content = '<a href= "https://www.boston.gov/departments/city-council/ricardo-arroyo">Ricardo Arroyo</a> | 617-635-4210<br> <a href= "https://www.boston.gov/departments/city-council/andrea-campbell">Andrea Campbell</a>| 617-635-3131<br>';
+            break;
+          case "02119, 02120":
+            content = '<a href= "https://www.boston.gov/departments/city-council/kim-janey">Kim Janey</a> | 617-635-3510<br>';
+            break;
+          case "02132":
+            content = '<a href= "https://www.boston.gov/departments/city-council/matt-omalley">Matt O\'Malley</a> | 617-635-4220<br>';
+            break;
+          case "02111, 02118":
+            content = '<a href= "https://www.boston.gov/departments/city-council/ed-flynn">Ed Flynn</a> | 617-635-3203<br>';
+            break;
+          case "02127, 02210":
+            content = '<a href= "https://www.boston.gov/departments/city-council/ed-flynn">Ed Flynn</a> | 617-635-3203<br>';
+            break;
+          case "02130":
+            content = '<a href= "https://www.boston.gov/departments/city-council/matt-omalley">Matt O\'Malley</a> | 617-635-4220<br> <a href= "https://www.boston.gov/departments/city-council/andrea-campbell">Andrea Campbell</a>| 617-635-3131<br>';
+            break;
+          case "02129":
+            content = '<a href= "https://www.boston.gov/departments/city-council/lydia-edwards">Lydia Edwards</a> | 617-635-3200<br>';
+            break;
+          case "02163, 02134, 02135":
+            content = '<a href= "https://www.boston.gov/departments/city-council/liz-breadon">Liz Breadon</a> | 617-635-3113<br>';
+            break;
+          case "02108, 02114, 02116, 02199, 02222, 02109, 02110, 02113":
+            content = '<a href= "https://www.boston.gov/departments/city-council/kenzie-bok">Kenzie Bok</a> | 617-635-4225 <br> <a href= "https://www.boston.gov/departments/city-council/ed-flynn">Ed Flynn</a> | 617-635-3203 <br> <a href= "https://www.boston.gov/departments/city-council/lydia-edwards">Lydia Edwards</a> | 617-635-3200<br>';
+            break;
+          case "02115, 02215":
+            content = '<a href= "https://www.boston.gov/departments/city-council/kenzie-bok">Kenzie Bok</a> | 617-635-4225<br>';
+            break;
+          default:
+            content = '<a href= "https://www.boston.gov/departments/city-council/kim-janey">Kim Janey</a> | 617-635-3510<br>';
+            break;
+        }
+        return (`
+<div>
   <div class="card-content">
     <div class="media">
       <div class="media-content">
         <h3 class="display-4">${town.name}</h3>
       </div>
     </div>
-    <div class="content>
-      <span v-if="${town.zip} == 02128"><a href= "https://www.boston.gov/departments/city-council/lydia-edwards">Lydia Edwards</a> | 617-635-3200</span><br>
-      <span v-else-if="${town.zip} === 02126"><a href= "https://www.boston.gov/departments/city-council/andrea-campbell">Andrea Campbell</a> | 617-635-3131</span><br>
-      <span v-else-if="${town.zip} === 02122, 02124"><a href= "https://www.boston.gov/departments/city-council/frank-baker">Frank Baker</a> | 617-635-3455</span><br>
-      <span v-else-if="${town.zip} === 02121, 02125"><a href= "https://www.boston.gov/departments/city-council/andrea-campbell">Andrea Campbell</a> | 617-635-3131</span><br>
-      <span v-else-if="${town.zip} === 02136"><a href= "https://www.boston.gov/departments/city-council/ricardo-arroyo">Ricardo Arroyo</a> | 617-635-4210</span><br>
-      <span v-else-if="${town.zip} === 02131"><a href= "https://www.boston.gov/departments/city-council/ricardo-arroyo">Ricardo Arroyo</a> | 617-635-4210<br> <a href= "https://www.boston.gov/departments/city-council/andrea-campbell">Andrea Campbell</a>| 617-635-3131</span><br>
-      <span v-else-if="${town.zip} === 02119, 02120"><a href= "https://www.boston.gov/departments/city-council/kim-janey">Kim Janey</a> | 617-635-3510</span><br>
-      <span v-else-if="${town.zip} === 02132"><a href= "https://www.boston.gov/departments/city-council/matt-omalley">Matt O'Malley</a> | 617-635-4220</span><br>
-      <span v-else-if="${town.zip} === 02111, 02118"><a href= "https://www.boston.gov/departments/city-council/ed-flynn">Ed Flynn</a> | 617-635-3203</span><br>
-      <span v-else-if="${town.zip} === 02127, 02210"><a href= "https://www.boston.gov/departments/city-council/ed-flynn">Ed Flynn</a> | 617-635-3203</span><br>
-      <span v-else-if="${town.zip} === 02130"><a href= "https://www.boston.gov/departments/city-council/matt-omalley">Matt O'Malley</a> | 617-635-4220<br> <a href= "https://www.boston.gov/departments/city-council/andrea-campbell">Andrea Campbell</a>| 617-635-3131</span><br>
-      <span v-else-if="${town.zip} === 02129"><a href= "https://www.boston.gov/departments/city-council/lydia-edwards">Lydia Edwards</a> | 617-635-3200</span><br>
-      <span v-else-if="${town.zip} === 02163, 02134, 02135"><a href= "https://www.boston.gov/departments/city-council/liz-breadon">Liz Breadon</a> | 617-635-3113</span><br>
-      <span v-else-if="${town.zip} === 02108, 02114, 02116, 02199, 02222, 02109, 02110, 02113"><a href= "https://www.boston.gov/departments/city-council/kenzie-bok">Kenzie Bok</a> | 617-635-4225 <br> <a href= "https://www.boston.gov/departments/city-council/ed-flynn">Ed Flynn</a> | 617-635-3203 <br> <a href= "https://www.boston.gov/departments/city-council/lydia-edwards">Lydia Edwards</a> | 617-635-3200</span><br>
-      <span v-else-if="${town.zip} === 02115, 02215"><a href= "https://www.boston.gov/departments/city-council/kenzie-bok">Kenzie Bok</a> | 617-635-4225 </span><br>
-      <span v-else-if="${town.zip} === N/A"><a href= "https://www.boston.gov/departments/city-council/kim-janey">Kim Janey</a> | 617-635-3510</span><br>
+    <div>
+      ${content}
     </div>
     <div class="content">
         ZIP Code: ${town.zip}  02128

@@ -2,6 +2,10 @@ import Vue from "vue";
 import App from "./App";
 import * as VueGoogleMaps from "vue2-google-maps";
 import router from './index'
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+Vue.use(IconsPlugin)
+
+Vue.use(BootstrapVue)
 
 Vue.use(VueGoogleMaps, {
   load: {

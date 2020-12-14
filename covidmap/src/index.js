@@ -7,16 +7,20 @@ Vue.use(Router)
 
 export default new Router({
     routes: [
-      /*({
+      {
         path: '/',
         name: 'GoogleMap',
         component: () => import('@/components/GoogleMap')
-      },*/
+      },
       {
-        path: '/',
-        name: 'QuickStats',
-        props: true,
-        component: () => import('@/components/Quick_stats')
+        path: '/QuickStats',
+        name: 'Quick Stats',
+        component: () => import('@/components/QuickStats')
+      },
+      {
+        path: '/MutualAid',
+        name: 'Mutual Aid',
+        component: () => import('@/components/MutualAid')
       }
     ]
 })

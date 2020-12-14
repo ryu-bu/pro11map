@@ -123,11 +123,11 @@
 </template>
 
 
-// <script>
+<script>
 import axios from 'axios';
 
 export default{
-  name: "QuickStats",
+  name: "Quick Stats",
   data(){
     return{
       api_endpoint: 'http://127.0.0.1:8000/api/covid/towns/',

@@ -1,0 +1,22 @@
+// Your variable overrides
+// $body-bg: #0054A6;
+$theme-colors: (
+    "primary": #0054A6,
+);
+
+.navbar {
+    min-height: 80px;
+  };
+
+.b-navbar-brand {
+    font-size: 500px;
+}
+  
+// $primary: #0054A6;
+// Bootstrap and its default variables
+// @import '../node_modules/bootstrap/scss/bootstrap';
+// // BootstrapVue and its default variables
+// @import '../node_modules/bootstrap-vue/src/index.scss';
+
+@import '~bootstrap/scss/bootstrap.scss';
+@import '~bootstrap-vue/src/index.scss';
